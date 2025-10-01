@@ -11,8 +11,8 @@ model = joblib.load("xgb_model.pkl")
 df = pd.read_csv("Food_Delivery_Times.csv")
 
 # Judul Dashboard
-st.title("📦 Food Delivery Time")
-st.header("🛠️ Input Operasional")
+st.title("🍱🍔🍕🛵 Food Delivery Time")
+st.header("👩‍💻 Input Operasional")
 
 # Input User
 distance = st.slider("Jarak Pengiriman (km)", 0.5, 20.0, 5.0)
@@ -35,7 +35,7 @@ input_df = pd.DataFrame([{
 }])
 
 predicted_time = model.predict(input_df)[0]
-st.subheader(f"⏱️ Estimasi Durasi Pengantaran: {int(predicted_time)} menit")
+st.subheader(f"⏱️ Estimasi Durasi Pengantaran : {int(predicted_time)} menit")
 
 # Distribusi Waktu Pengantaran
 st.header("📈 Distribusi Waktu Pengantaran")
